@@ -44,7 +44,7 @@ if uploaded_files:
     hue = st.selectbox("色分け基準", df_columns)
     
     #実行ボタン
-    execute_pairplot = st.button("ペアプロット描画")
+    execute_pairplot = st.button("描画")
     #実行ボタンを押したら下記を表示
     if execute_pairplot:
             df_sns = df[item]
@@ -68,7 +68,7 @@ if uploaded_files:
     #機械学習のタイプにより以下の処理が分岐
     if ml_menu == "重回帰分析":
             st.markdown("#### 機械学習を実行します")
-            execute = st.button("実行")
+            execute = st.button("学習を実行")
             
             lr = linear_model.LinearRegression()
             #実行ボタンを押したら下記が進む
@@ -92,7 +92,7 @@ if uploaded_files:
     #ロジスティック回帰分析を選択した場合
     elif ml_menu == "ロジスティック回帰分析":
             st.markdown("#### 機械学習を実行します")
-            execute = st.button("実行")
+            execute = st.button("学習を実行")
             
             lr = LogisticRegression()
 
