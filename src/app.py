@@ -25,7 +25,7 @@ if uploaded_files:
     st.markdown("### 入力データ")
     st.dataframe(df.style.highlight_max(axis=0))
     #matplotlibで可視化
-    st.markdown("### 可視化 単変量")
+    st.markdown("### 単変量")
     #データフレームのカラムを選択オプションに設定する
     x = st.selectbox("X軸", df_columns)
     y = st.selectbox("Y軸", df_columns)
@@ -37,7 +37,7 @@ if uploaded_files:
     st.pyplot(fig)
 
     #seabornのペアプロットで可視化。複数の変数を選択できる。
-    st.markdown("### 可視化 ペアプロット")
+    st.markdown("### ペアプロット")
     #データフレームのカラムを選択肢にする。複数選択
     item = st.multiselect("可視化するカラム", df_columns)
     #散布図の色分け基準を１つ選択する。カテゴリ変数を想定
@@ -63,7 +63,7 @@ if uploaded_files:
     ob = st.selectbox("目的変数を選択してください", df_columns)
 
     #機械学習のタイプを選択する。
-    ml_menu = st.selectbox("実施する機械学習のタイプを選択してください", ["重回帰分析","ロジスティック回帰分析"])
+    ml_menu = st.selectbox("機械学習のタイプを選択してください", ["重回帰分析","ロジスティック回帰分析"])
     
     #機械学習のタイプにより以下の処理が分岐
     if ml_menu == "重回帰分析":
